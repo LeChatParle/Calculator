@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var mainHistory: UILabel!
     @IBOutlet weak var secondHist: UILabel!
+    @IBOutlet weak var thirdHist: UILabel!
+    @IBOutlet weak var fourthHist: UILabel!
     
     var dataState = 0
     var operationState = 0
@@ -26,6 +28,8 @@ class ViewController: UIViewController {
     @IBAction func clearAll(_ sender: UIButton) {
         mainHistory.text = "0"
         secondHist.text = "0"
+        thirdHist.text = "0"
+        fourthHist.text = "0"
     }
     
     //Checks if there are any significant numbers, then decides if it should
@@ -72,6 +76,8 @@ class ViewController: UIViewController {
             evaledData = mainHistory.text!
             let expression = NSExpression(format: evaledData)
             let result = expression.expressionValue(with: nil, context: nil) as! Int
+            fourthHist.text = thirdHist.text
+            thirdHist.text = secondHist.text
             secondHist.text = String(result)
             mainHistory.text = "0"
             dataState = 0
