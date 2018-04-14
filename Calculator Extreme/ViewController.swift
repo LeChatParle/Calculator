@@ -27,9 +27,9 @@ class ViewController: UIViewController {
     
     @IBAction func clearAll(_ sender: UIButton) {
         mainHistory.text = "0"
-        secondHist.text = "0"
-        thirdHist.text = "0"
-        fourthHist.text = "0"
+        secondHist.text = ""
+        thirdHist.text = ""
+        fourthHist.text = ""
     }
     
     //Checks if there are any significant numbers, then decides if it should
